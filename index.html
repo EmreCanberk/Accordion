@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerçekçi Akordeon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://raw.githubusercontent.com/EmreCanberk/Accordion/main/gif/elbrus.jpg');
+            background-size: cover; /* Arka planın tamamen dolması */
+            background-position: center; /* Arka planın ortalanması */
+            background-repeat: no-repeat; /* Arka planın tekrar etmemesi */
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Kutu stili */
+        .box-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 350px;  /* Kutunun genişliği */
+            height: 350px; /* Kutunun yüksekliği */
+            margin-bottom: 20px;
+            background-color: white; /* Kutunun içi beyaz */
+            border-radius: 15px; /* Yuvarlak köşeler */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+            overflow: hidden; /* İçeriğin taşmaması için */
+        }
+
+        .image-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #cal {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #966f58; 
+            color: white;
+            border: none;
+            border-radius: 50%; 
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #cal:hover {
+            background-color: #db8616;
+        }
+    </style>
+</head>
+<body>
+    <!-- Kutu içinde görsel ve gif -->
+    <div class="box-container">
+        <div class="image-container">
+            <img id="image" src="https://raw.githubusercontent.com/EmreCanberk/Accordion/main/gif/donuk.jpg" alt="Fotoğraf">
+        </div>
+    </div>
+
+    <button id="cal">Çal</button>
+
+    <audio id="music" src="https://raw.githubusercontent.com/EmreCanberk/Accordion/main/music/akordeon.mp3"></audio>
+
+    <script>
+        let calButon = document.getElementById("cal");
+        let image = document.getElementById("image");
+        let music = document.getElementById("music");
+
+        calButon.addEventListener("click", function() {
+            if (calButon.textContent === "Çal") {
+                calButon.textContent = "Dur";
+                image.src = "https://raw.githubusercontent.com/EmreCanberk/Accordion/main/gif/gif.gif";
+                music.play(); 
+            } else {
+                calButon.textContent = "Çal";
+                image.src = "https://raw.githubusercontent.com/EmreCanberk/Accordion/main/gif/donuk.jpg"; 
+                music.pause();
+                music.currentTime = 0; 
+            }
+        });
+    </script>
+</body>
+</html>
