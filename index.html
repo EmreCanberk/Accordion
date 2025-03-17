@@ -10,7 +10,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('https://raw.githubusercontent.com/EmreCanberk/Accordion/main/gif/elbrus.jpg');
+            background-image: url('https://raw.githubusercontent.com/EmreCanberk/Accordion/main/elbrus.jpg');
             background-size: cover; 
             background-position: center; 
             background-repeat: no-repeat; 
@@ -66,13 +66,13 @@
   
     <div class="box-container">
         <div class="image-container">
-            <img id="image" src="https://raw.githubusercontent.com/EmreCanberk/Accordion/main/gif/donuk.jpg" alt="Fotoğraf">
+            <img id="image" src="https://raw.githubusercontent.com/EmreCanberk/Accordion/main/donuk.jpg" alt="Fotoğraf">
         </div>
     </div>
 
     <button id="cal">Çal</button>
 
-    <audio id="music" src="https://raw.githubusercontent.com/EmreCanberk/Accordion/main/music/naze.mp3"></audio>
+    <audio id="music" src="https://raw.githubusercontent.com/EmreCanberk/Accordion/main/naze.mp3"></audio>
 
     <script>
         let calButon = document.getElementById("cal");
@@ -82,11 +82,11 @@
         calButon.addEventListener("click", function() {
             if (calButon.textContent === "Çal") {
                 calButon.textContent = "Dur";
-                image.src = "https://raw.githubusercontent.com/EmreCanberk/Accordion/main/gif/gif.gif";
+                image.src = "https://raw.githubusercontent.com/EmreCanberk/Accordion/gif/gif.gif";
                 music.play(); 
             } else {
                 calButon.textContent = "Çal";
-                image.src = "https://raw.githubusercontent.com/EmreCanberk/Accordion/main/gif/donuk.jpg"; 
+                image.src = "https://raw.githubusercontent.com/EmreCanberk/Accordion/gif/donuk.jpg"; 
                 music.pause();
                 music.currentTime = 0; 
             }
